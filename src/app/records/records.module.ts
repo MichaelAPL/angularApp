@@ -5,11 +5,13 @@ import { RecordsRoutingModule } from './records-routing.module';
 import { RecordsComponent } from './records.component';
 
 import { MaterialModule } from '../shared/modules/material/material.module';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
   declarations: [
-    RecordsComponent
+    RecordsComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,
