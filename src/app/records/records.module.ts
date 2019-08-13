@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { RecordsRoutingModule } from './records-routing.module';
 import { RecordsComponent } from './records.component';
@@ -16,7 +17,8 @@ import { CreateComponent } from './create/create.component';
   imports: [
     CommonModule,
     RecordsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
 })
 export class RecordsModule { }

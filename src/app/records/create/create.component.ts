@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JogginRecordService } from '../../shared/joggin-record.service';
+import { log } from 'util';
 
 @Component({
   selector: 'app-create',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  private record: any;
+  
+
+  constructor(private jogginRecordService: JogginRecordService) {
+    this.record = {
+      distance: null,
+      description: null,
+      createdAt: null
+    }
+  }
 
   ngOnInit() {
+  }
+
+  createNewRecord(): void {
+    console.log(this.record);
+    this.jogginRecordService.createRecord(this.record).then(response => {
+      console.log(response);
+    });
   }
 
 }

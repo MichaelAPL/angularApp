@@ -1,8 +1,23 @@
 <mat-card>
   <mat-card-header>
-    Create a new record
+    <mat-card-title>Create a new record</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Distance" [(ngModel)]="record.distance">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" [(ngModel)]="record.description">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="record.createdAt">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="createNewRecord()">Save</button>
+  </mat-card-actions>
 </mat-card>
